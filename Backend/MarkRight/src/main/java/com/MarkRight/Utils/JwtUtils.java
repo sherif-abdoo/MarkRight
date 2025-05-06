@@ -2,11 +2,13 @@ package com.MarkRight.Utils;
 
 import com.MarkRight.Models.User;
 import com.auth0.jwt.JWT;
+import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
+import com.auth0.jwt.exceptions.JWTVerificationException;
+import com.auth0.jwt.interfaces.DecodedJWT;
 import jakarta.servlet.ServletException;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Service;
 
@@ -29,18 +31,17 @@ public class JwtUtils {
     @Value("${jwt.refresh.lifetime.seconds}")
     private int refreshLifetime;
 
-    public String createAccessToken(Authentication authResult,
-                                    String issuer , boolean access) throws IOException, ServletException {
-        User user = (User) authResult.getPrincipal();
+    public String createToken(User user,
+                              String issuer , boolean accessToken) throws IOException, ServletException {
 
-        List<String>auths = authResult.getAuthorities().stream()
+        List<String>auths = user.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.toList());
 
         Date now = new Date();
-        Date expiryDate = access ? new Date(now.getTime() + accessLifetime*1000)
+        Date expiryDate = accessToken ? new Date(now.getTime() + accessLifetime*1000)
                 : new Date(now.getTime() + refreshLifetime*1000);
-        String secret = access ? accessSecret : refreshSecret;
+        String secret = accessToken ? accessSecret : refreshSecret;
 
         return JWT.create()
                 .withSubject(user.getUsername())
@@ -49,5 +50,25 @@ public class JwtUtils {
                 .withIssuedAt(now)
                 .withExpiresAt(expiryDate)
                 .sign(Algorithm.HMAC256(secret));
+    }
+
+    public boolean validateToken(String token,boolean accessToken) {
+        try{
+            DecodedJWT jwt = getDecodedJWT(token, accessToken);
+            return true;
+        }catch(JWTVerificationException e){
+            return false;
+        }
+    }
+    public DecodedJWT getDecodedJWT(String token,boolean accessToken) {
+        String secret = accessToken ? accessSecret : refreshSecret;
+        try{
+            Algorithm algorithm = Algorithm.HMAC256(secret);
+            JWTVerifier verifier = JWT.require(algorithm).build();
+            DecodedJWT jwt = verifier.verify(token);
+            return jwt;
+        }catch(JWTVerificationException e){
+            throw new JWTVerificationException(e.getMessage());
+        }
     }
 }

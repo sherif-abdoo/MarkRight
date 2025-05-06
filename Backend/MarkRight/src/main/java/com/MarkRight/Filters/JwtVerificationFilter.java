@@ -1,5 +1,6 @@
 package com.MarkRight.Filters;
 
+import com.MarkRight.Utils.CookiesUtils;
 import com.MarkRight.Utils.JwtUtils;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
@@ -9,6 +10,7 @@ import com.auth0.jwt.interfaces.DecodedJWT;
 import com.google.common.base.Strings;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.AllArgsConstructor;
@@ -34,16 +36,19 @@ public class JwtVerificationFilter extends OncePerRequestFilter {
                                     FilterChain filterChain) throws ServletException, IOException {
 
         String uri = request.getRequestURI();
-        if(uri.endsWith("sign_up") || uri.endsWith("refresh")){
+        if (uri.contains("/sign_up") || uri.contains("/refresh-token")) {
+            System.out.println("refresh token");
             filterChain.doFilter(request, response);
             return;
         }
-        String authHeader = request.getHeader("Authorization");
-        if (Strings.isNullOrEmpty(authHeader) || !authHeader.startsWith("Bearer ")) {
-            throw new ServletException("Invalid JWT token");
+
+        String token = CookiesUtils.extractFromCookies(request, "access_token");
+
+        if (Strings.isNullOrEmpty(token)) {
+            throw new ServletException("Missing or invalid access token in cookies");
         }
-        String token = authHeader.replace("Bearer ", "");
-        try{
+
+        try {
             Algorithm algorithm = Algorithm.HMAC256(jwtUtils.getAccessSecret());
             JWTVerifier verifier = JWT.require(algorithm).build();
             DecodedJWT jwt = verifier.verify(token);
@@ -51,15 +56,18 @@ public class JwtVerificationFilter extends OncePerRequestFilter {
             String subject = jwt.getSubject();
             List<String> authorities = jwt.getClaim("authorities").asList(String.class);
 
-            List<SimpleGrantedAuthority> grantedAuthorities = authorities.stream().
-                    map(SimpleGrantedAuthority::new).
-                    collect(Collectors.toList());
+            List<SimpleGrantedAuthority> grantedAuthorities = authorities.stream()
+                    .map(SimpleGrantedAuthority::new)
+                    .collect(Collectors.toList());
 
             Authentication auth = new UsernamePasswordAuthenticationToken(subject, null, grantedAuthorities);
             SecurityContextHolder.getContext().setAuthentication(auth);
-        }catch(JWTVerificationException e){
-            throw new IllegalStateException("Invalid JWT token");
+        } catch (JWTVerificationException e) {
+            throw new IllegalStateException("Invalid JWT token: " + e.getMessage());
         }
+
         filterChain.doFilter(request, response);
     }
+
+
 }

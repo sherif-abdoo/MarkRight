@@ -1,6 +1,7 @@
 package com.MarkRight.Filters;
 
 import com.MarkRight.Dto.LoginRequestDto;
+import com.MarkRight.Models.User;
 import com.MarkRight.Utils.JSendResponse;
 import com.MarkRight.Utils.JwtUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -43,11 +44,12 @@ public class JwtUsernameAndPasswordFilter extends UsernamePasswordAuthentication
                                             FilterChain chain,
                                             Authentication authResult) throws IOException, ServletException {
 
-        String accessToken = jwtUtils.createAccessToken(authResult,
+        User user = (User) authResult.getPrincipal();
+        String accessToken = jwtUtils.createToken( user,
                 request.getRequestURL().toString(),
                 true);
 
-        String refreshToken = jwtUtils.createAccessToken(authResult,
+        String refreshToken = jwtUtils.createToken( user,
                 request.getRequestURL().toString(),
                 false);
 
