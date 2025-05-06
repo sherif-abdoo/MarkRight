@@ -1,6 +1,8 @@
 package com.MarkRight.Configs;
 
+import com.MarkRight.Filters.GlobalFilterExceptionHandler;
 import com.MarkRight.Filters.JwtUsernameAndPasswordFilter;
+import com.MarkRight.Filters.JwtVerificationFilter;
 import com.MarkRight.Utils.JwtUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -12,6 +14,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
@@ -25,13 +28,14 @@ public class SecurityConfig{
                                                    AuthenticationManager authManager ) throws Exception {
         http
                 .csrf(csrf -> csrf.disable())
-                .sessionManagement(session -> session
-                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .addFilter(new JwtUsernameAndPasswordFilter(authManager, jwtUtils))
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/login","/sign_up").permitAll()
                         .anyRequest().authenticated()
                 )
+                .addFilterBefore(new GlobalFilterExceptionHandler(), UsernamePasswordAuthenticationFilter.class)
+                .addFilter(new JwtUsernameAndPasswordFilter(authManager, jwtUtils))
+                .addFilterAfter(new JwtVerificationFilter(jwtUtils) , JwtUsernameAndPasswordFilter.class)
                 .formLogin(Customizer.withDefaults());
         return http.build();
     }

@@ -1,6 +1,9 @@
 package com.MarkRight.Filters;
 
+import com.MarkRight.Dto.LoginRequestDto;
+import com.MarkRight.Utils.JSendResponse;
 import com.MarkRight.Utils.JwtUtils;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.Cookie;
@@ -13,6 +16,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import java.io.IOException;
+import java.util.Map;
 
 @AllArgsConstructor
 public class JwtUsernameAndPasswordFilter extends UsernamePasswordAuthenticationFilter {
@@ -21,12 +25,16 @@ public class JwtUsernameAndPasswordFilter extends UsernamePasswordAuthentication
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request,
                                                 HttpServletResponse response) throws AuthenticationException {
-            String username = request.getParameter("username");
-            String password = request.getParameter("password");
-            Authentication auth = new UsernamePasswordAuthenticationToken(
-                    username, password);
+        LoginRequestDto credentials;
+        try {
+            credentials = new ObjectMapper().readValue(request.getInputStream(), LoginRequestDto.class);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        Authentication auth = new UsernamePasswordAuthenticationToken(
+                credentials.getUsername(), credentials.getPassword());
 
-            return authenticationManager.authenticate(auth);
+        return authenticationManager.authenticate(auth);
     }
 
     @Override
@@ -57,6 +65,36 @@ public class JwtUsernameAndPasswordFilter extends UsernamePasswordAuthentication
         refreshCookie.setMaxAge(604800);
         response.addCookie(refreshCookie);
 
+
+        Map<String, Object> data = Map.of(
+                "message", "Login successful",
+                "username", authResult.getName()
+        );
+
+        JSendResponse jsend = JSendResponse.success(data);
+
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        new ObjectMapper().writeValue(response.getWriter(), jsend);
+
         chain.doFilter(request, response);
     }
+
+    @Override
+    protected void unsuccessfulAuthentication(HttpServletRequest request,
+                                              HttpServletResponse response,
+                                              AuthenticationException failed) throws IOException, ServletException {
+        Map<String, Object> data = Map.of(
+                "error", "Invalid username or password"
+        );
+
+        JSendResponse jsend = JSendResponse.fail(data);
+
+        response.setContentType("application/json");
+        response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+        response.setCharacterEncoding("UTF-8");
+
+        new ObjectMapper().writeValue(response.getWriter(), jsend);
+    }
+
 }

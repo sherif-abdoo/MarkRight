@@ -3,6 +3,7 @@ package com.MarkRight.Controller;
 import com.MarkRight.Models.User;
 import com.MarkRight.Services.UserService;
 import com.MarkRight.Utils.JSendResponse;
+import com.MarkRight.Utils.JSendResponseBuilder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +20,6 @@ public class AuthController {
     private final UserService userService;
     @PostMapping("sign_up")
     public ResponseEntity<JSendResponse> signUp(@RequestBody User user){
-        return ResponseEntity.ok().body(userService.registerUser(user));
+        return JSendResponseBuilder.build(userService.registerUser(user));
     }
 }

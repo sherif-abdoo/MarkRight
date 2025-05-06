@@ -23,6 +23,9 @@ public class Day {
     @JoinColumn(name = "creator_id", nullable = false)
     private User dayCreator;
 
+    @Column(nullable = false)
+    private String dayGoal;
+
     @CreationTimestamp
     private LocalDateTime createdAt;
 }

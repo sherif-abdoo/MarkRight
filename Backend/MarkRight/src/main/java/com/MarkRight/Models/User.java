@@ -18,12 +18,13 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Column(unique = true)
+    @Column(nullable = false,unique = true)
     private String username;
 
+    @Column(nullable = false)
     private String password;
 
-    @Column(unique = true)
+    @Column(nullable = false,unique = true)
     private String email;
 
     private boolean isEnabled = true;
