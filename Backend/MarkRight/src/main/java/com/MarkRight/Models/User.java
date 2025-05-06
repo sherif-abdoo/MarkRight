@@ -21,19 +21,18 @@ public class User implements UserDetails {
     @Column(unique = true)
     private String username;
 
-    @JsonIgnore
     private String password;
 
     @Column(unique = true)
     private String email;
 
-    private boolean isEnabled;
-    private boolean isAccountNonExpired;
-    private boolean isAccountNonLocked;
-    private boolean isCredentialsNonExpired;
+    private boolean isEnabled = true;
+    private boolean isAccountNonExpired = true;
+    private boolean isAccountNonLocked = true;
+    private boolean isCredentialsNonExpired = true;
 
     @Enumerated(EnumType.STRING)
-    private UserRoles userRoles;
+    private UserRoles userRoles = UserRoles.USER;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
