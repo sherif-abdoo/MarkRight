@@ -17,6 +17,7 @@ import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -59,6 +60,15 @@ public class TaskService {
             return JSendResponse.success(response);
         }
     }
+
+    public JSendResponse getAllTasksByUsername(String username) {
+        Map<String, Object> response = new HashMap<>();
+        List<TaskDto> tasks = taskRepo.findTasksByTaskCreatorUsername(username)
+                .stream().map(taskMapper::toDto).collect(Collectors.toList());
+        response.put("tasks", tasks);
+        return JSendResponse.success(response);
+    }
+
 
     public JSendResponse getTasksByDate(int userId , LocalDate searchDate) {
         Map<String, Object> response = new HashMap<>();

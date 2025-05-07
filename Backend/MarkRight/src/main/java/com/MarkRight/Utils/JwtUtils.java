@@ -71,4 +71,13 @@ public class JwtUtils {
             throw new JWTVerificationException(e.getMessage());
         }
     }
+
+    public String getUsernameFromToken(String token) {
+        try {
+            DecodedJWT decodedJWT = getDecodedJWT(token, true);
+            return decodedJWT.getSubject(); // username is stored as subject
+        } catch (JWTVerificationException e) {
+            throw new JWTVerificationException("Failed to extract username: " + e.getMessage());
+        }
+    }
 }

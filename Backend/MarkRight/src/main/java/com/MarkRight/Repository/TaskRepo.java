@@ -14,6 +14,6 @@ import java.util.Optional;
 public interface TaskRepo extends CrudRepository<Task, Integer> {
     @Query("SELECT t FROM Task t WHERE t.taskCreator.id = :userId AND :searchDate BETWEEN t.startsAt AND t.endsAt")
     List<Task> findTasksByDateAndUser(@Param("userId") Integer userId, @Param("searchDate") LocalDate searchDate);
-
+    List<Task> findTasksByTaskCreatorUsername(String username);
     Optional<Task> findTaskByDescription(String description);
 }
