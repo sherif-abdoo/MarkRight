@@ -1,7 +1,10 @@
 import React from "react";
 import "./AuthCard.css";
 
-const AuthCard = ({ title, children, footerText, footerLinkText, footerLinkHref, buttonText, forgotPasswordLink }) => {
+const AuthCard = ({ title, children,
+                      footerText, footerLinkText,
+                      footerLinkHref, buttonText,
+                      forgotPasswordLink , handleOnClick }) => {
     return (
         <div className="auth-card">
             <h2 className="auth-title">{title}</h2>
@@ -22,7 +25,7 @@ const AuthCard = ({ title, children, footerText, footerLinkText, footerLinkHref,
             </div>
 
             <div className="button-container">
-                <button className="auth-button">{buttonText || "Log In"}</button>
+                <button className="auth-button" onClick={handleOnClick}>{buttonText || "Log In"}</button>
             </div>
         </div>
     );

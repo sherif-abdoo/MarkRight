@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./TestPage.css"
 import { authFetch } from "../utils/AuthFetch";
-import LoginCard from "../Components/auth/LoginCard";
-import SignUpCard from "../Components/auth/SignUpCard";
+import LoginCard from "../Components/authComponents/LoginCard";
+import SignUpCard from "../Components/authComponents/SignUpCard";
 
 export default function TestPage() {
     const [data, setData] = useState(null);

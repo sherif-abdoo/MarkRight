@@ -1,4 +1,4 @@
-import LoginCard from "../Components/auth/LoginCard";
+import LoginCard from "../../Components/authComponents/LoginCard";
 import "./AuthPage.css"
 export default function LoginPage(){
     return (

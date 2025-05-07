@@ -4,18 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb77df0b-80ac-4133-9d2e-54b5d658261e" name="Changes" comment="glossycard">
-      <change afterPath="$PROJECT_DIR$/src/Components/auth/AuthCard.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/auth/LoginCard.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/auth/SignUpCard.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Pages/AuthPage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Pages/LoginPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Pages/SignUpPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Pages/TestPage.css" afterDir="false" />
+    <list default="true" id="cb77df0b-80ac-4133-9d2e-54b5d658261e" name="Changes" comment="Auth card + sign page + login page">
+      <change afterPath="$PROJECT_DIR$/src/Components/authComponents/LoginCard.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/Sanitize.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Controller/AuthController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/AuthCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/auth/AuthCard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/auth/AuthCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/authComponents/AuthCard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/auth/AuthCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/authComponents/AuthCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/auth/LoginCard.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/auth/SignUpCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/authComponents/SignUpCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/AuthPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/authPages/AuthPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/LoginPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/authPages/LoginPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/SignUpPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/authPages/SignUpPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/TestPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/TestPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,9 +28,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript JSX File" />
-        <option value="JSX File" />
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="JSX File" />
       </list>
     </option>
   </component>
@@ -83,6 +84,7 @@
       <recent name="S:\Projects\MarkRight\frontend\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="S:\Projects\MarkRight\frontend\src\Pages\authPages" />
       <recent name="S:\Projects\MarkRight\frontend\src\Components\auth" />
       <recent name="S:\Projects\MarkRight\frontend\src\Components" />
     </key>
@@ -117,7 +119,7 @@
       <workItem from="1746500381708" duration="20000" />
       <workItem from="1746500403200" duration="178000" />
       <workItem from="1746530100078" duration="13547000" />
-      <workItem from="1746585478627" duration="4171000" />
+      <workItem from="1746585478627" duration="9842000" />
     </task>
     <task id="LOCAL-00001" summary="frontend foundation">
       <option name="closed" value="true" />
@@ -151,7 +153,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746552136442</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Auth card + sign page + login page">
+      <option name="closed" value="true" />
+      <created>1746589743954</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1746589743954</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +171,7 @@
     <MESSAGE value="frontend foundation" />
     <MESSAGE value="auth Fetch done and tested" />
     <MESSAGE value="glossycard" />
-    <option name="LAST_COMMIT_MESSAGE" value="glossycard" />
+    <MESSAGE value="Auth card + sign page + login page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Auth card + sign page + login page" />
   </component>
 </project>

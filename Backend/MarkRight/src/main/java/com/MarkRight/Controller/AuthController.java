@@ -25,7 +25,7 @@ import java.util.Map;
 public class AuthController {
     private final UserService userService;
     private final RefreshTokenService refreshTokenService;
-    @PostMapping("sign_up")
+    @PostMapping("/sign_up")
     public ResponseEntity<JSendResponse> signUp(@RequestBody User user){
         return JSendResponseBuilder.build(userService.registerUser(user));
     }
