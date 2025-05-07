@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb77df0b-80ac-4133-9d2e-54b5d658261e" name="Changes" comment="auth Fetch done and tested">
-      <change afterPath="$PROJECT_DIR$/src/Components/GlossyCard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/GlossyCard.jsx" afterDir="false" />
+    <list default="true" id="cb77df0b-80ac-4133-9d2e-54b5d658261e" name="Changes" comment="glossycard">
+      <change afterPath="$PROJECT_DIR$/src/Components/auth/AuthCard.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/auth/LoginCard.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/auth/SignUpCard.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pages/AuthPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pages/LoginPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pages/SignUpPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pages/TestPage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/AuthCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/auth/AuthCard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/TestPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/TestPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +26,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
+        <option value="TypeScript JSX File" />
         <option value="JSX File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -50,29 +60,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Node.js.App.js.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "S:/Projects/MarkRight/frontend/public",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2024.3.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Node.js.App.js.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;S:/Projects/MarkRight/frontend/public&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2024.3.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="S:\Projects\MarkRight\frontend\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="S:\Projects\MarkRight\frontend\src\Components\auth" />
       <recent name="S:\Projects\MarkRight\frontend\src\Components" />
     </key>
   </component>
@@ -105,7 +116,8 @@
       <updated>1746500380101</updated>
       <workItem from="1746500381708" duration="20000" />
       <workItem from="1746500403200" duration="178000" />
-      <workItem from="1746530100078" duration="12771000" />
+      <workItem from="1746530100078" duration="13547000" />
+      <workItem from="1746585478627" duration="4171000" />
     </task>
     <task id="LOCAL-00001" summary="frontend foundation">
       <option name="closed" value="true" />
@@ -131,7 +143,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746546593019</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="glossycard">
+      <option name="closed" value="true" />
+      <created>1746552136442</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1746552136442</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,6 +160,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="frontend foundation" />
     <MESSAGE value="auth Fetch done and tested" />
-    <option name="LAST_COMMIT_MESSAGE" value="auth Fetch done and tested" />
+    <MESSAGE value="glossycard" />
+    <option name="LAST_COMMIT_MESSAGE" value="glossycard" />
   </component>
 </project>
