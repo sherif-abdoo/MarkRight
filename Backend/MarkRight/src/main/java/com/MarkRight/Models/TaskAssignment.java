@@ -28,5 +28,5 @@ public class TaskAssignment {
     private LocalDateTime assignedAt;
 
     @Enumerated(EnumType.STRING)
-    private TaskAssignmentStatus status;
+    private TaskAssignmentStatus status = TaskAssignmentStatus.PENDING;
 }
