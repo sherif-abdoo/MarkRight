@@ -3,6 +3,7 @@ import "./TestPage.css"
 import { authFetch } from "../utils/AuthFetch";
 import LoginCard from "../Components/authComponents/LoginCard";
 import SignUpCard from "../Components/authComponents/SignUpCard";
+import GlossyCard from "../Components/GlossyCard";
 
 export default function TestPage() {
     const [data, setData] = useState(null);
@@ -27,8 +28,7 @@ export default function TestPage() {
 
     return (
         <div className="container">
-            <LoginCard/>
-            {/*<SignUpCard/>*/}
+            <GlossyCard/>
         </div>
     );
 }

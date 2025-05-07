@@ -65,9 +65,6 @@ const GlowCard = ({ title, content, glowColor = '#2b96e2' }) => {
             ></div>
 
             <div className="glow-card-content">
-                <div className="star-icon" style={{ color: `rgba(${rgbValue}, 0.9)` }}>★</div>
-                <h2>{title || 'Add Your Heading Text Here'}</h2>
-                <p>{content || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.'}</p>
             </div>
         </div>
     );
