@@ -1,4 +1,8 @@
 
+*{
+    padding:0;
+    margin:0;
+}
 .auth-card {
     width: 220px;
     background-color: #1E1E1E;

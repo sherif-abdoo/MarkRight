@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb77df0b-80ac-4133-9d2e-54b5d658261e" name="Changes" comment="auth wierd with backend and sanitization">
+    <list default="true" id="cb77df0b-80ac-4133-9d2e-54b5d658261e" name="Changes" comment="task card done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/GlossyCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/GlossyCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/GlossyCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/TaskCard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/GlossyCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/TaskCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/authComponents/AuthCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/authComponents/AuthCard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/TestPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/TestPage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/TestPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/TestPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +114,7 @@
       <workItem from="1746500403200" duration="178000" />
       <workItem from="1746530100078" duration="13547000" />
       <workItem from="1746585478627" duration="11547000" />
-      <workItem from="1746654708334" duration="1603000" />
+      <workItem from="1746654708334" duration="7708000" />
     </task>
     <task id="LOCAL-00001" summary="frontend foundation">
       <option name="closed" value="true" />
@@ -161,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746598252665</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="auth wierd with backend and sanitization">
+      <option name="closed" value="true" />
+      <created>1746661182032</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1746661182032</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,6 +184,7 @@
     <MESSAGE value="glossycard" />
     <MESSAGE value="Auth card + sign page + login page" />
     <MESSAGE value="auth wierd with backend and sanitization" />
-    <option name="LAST_COMMIT_MESSAGE" value="auth wierd with backend and sanitization" />
+    <MESSAGE value="task card done" />
+    <option name="LAST_COMMIT_MESSAGE" value="task card done" />
   </component>
 </project>
