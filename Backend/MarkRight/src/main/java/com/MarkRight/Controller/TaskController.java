@@ -1,14 +1,12 @@
 package com.MarkRight.Controller;
 
 import com.MarkRight.Dto.TaskDto;
-import com.MarkRight.Models.Task;
 import com.MarkRight.Services.TaskService;
 import com.MarkRight.Services.UserService;
 import com.MarkRight.Utils.CookiesUtils;
 import com.MarkRight.Utils.JSendResponse;
 import com.MarkRight.Utils.JSendResponseBuilder;
 import com.MarkRight.Utils.JwtUtils;
-import com.auth0.jwt.interfaces.DecodedJWT;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -50,8 +48,6 @@ public class TaskController {
         if (accessToken == null) {
             return JSendResponseBuilder.build(JSendResponse.fail(Map.of("error", "Access token not found in cookies")));
         }
-
-
         try {
             String creatorUsername = jwtUtils.getUsernameFromToken(accessToken);
             return JSendResponseBuilder.build(taskService.getAllTasksByUsername(creatorUsername));
@@ -59,4 +55,6 @@ public class TaskController {
             return JSendResponseBuilder.build(JSendResponse.fail(Map.of("error", e.getMessage())));
         }
     }
+
+
 }

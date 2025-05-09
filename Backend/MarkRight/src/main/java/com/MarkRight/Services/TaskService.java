@@ -1,6 +1,8 @@
 package com.MarkRight.Services;
 
+import com.MarkRight.Dto.TaskAssignmentDto;
 import com.MarkRight.Dto.TaskDto;
+import com.MarkRight.Mappers.TaskAssignmentMapper;
 import com.MarkRight.Mappers.TaskMapper;
 import com.MarkRight.Models.Task;
 import com.MarkRight.Models.TaskAssignment;
@@ -10,7 +12,6 @@ import com.MarkRight.Repository.TaskAssignmentRepo;
 import com.MarkRight.Repository.TaskRepo;
 import com.MarkRight.Utils.JSendResponse;
 import lombok.AllArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -26,6 +27,7 @@ public class TaskService {
     private final UserService userService;
     private final TaskMapper taskMapper;
     private final TaskAssignmentRepo taskAssignmentRepo;
+    private final TaskAssignmentMapper taskAssignmentMapper;
 
     public JSendResponse createTask(TaskDto taskDto) {
         Task task = taskMapper.toTask(taskDto);
@@ -63,8 +65,8 @@ public class TaskService {
 
     public JSendResponse getAllTasksByUsername(String username) {
         Map<String, Object> response = new HashMap<>();
-        List<TaskDto> tasks = taskRepo.findTasksByTaskCreatorUsername(username)
-                .stream().map(taskMapper::toDto).collect(Collectors.toList());
+        List<TaskAssignmentDto> tasks = taskAssignmentRepo.findAllAssignedTasksToUser(username)
+                .stream().map(TaskAssignmentMapper::toDto).collect(Collectors.toList());
         response.put("tasks", tasks);
         return JSendResponse.success(response);
     }
@@ -78,13 +80,15 @@ public class TaskService {
     }
 
     public JSendResponse assignTask(Task task , String assigneeUsername) {
-        User assineeUser;
+        User assineeUser = new User();
+        User assigner = task.getTaskCreator();
         Map<String, Object> response = new HashMap<>();
         TaskAssignment taskAssignment = new TaskAssignment();
 
         //if user assigning task to himself
         if(task.getTaskCreator().getUsername().equals(assigneeUsername)) {
-            assineeUser = task.getTaskCreator();
+            assineeUser.setId(assigner.getId());
+            assineeUser.setUsername("ME");
             taskAssignment.setStatus(TaskAssignmentStatus.ACCEPTED);
         }else{
             assineeUser = (User) userService.loadUserByUsername(assigneeUsername);

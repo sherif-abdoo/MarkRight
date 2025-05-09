@@ -1,6 +1,5 @@
 package com.MarkRight.Repository;
 
-import com.MarkRight.Models.Task;
 import com.MarkRight.Models.TaskAssignment;
 import com.MarkRight.Models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -16,6 +15,10 @@ public interface TaskAssignmentRepo extends JpaRepository<TaskAssignment, Intege
 
     @Query("SELECT t.assignedTo FROM TaskAssignment t WHERE t.task.id = :taskId")
     Optional<User> findAssignedToByTaskId(@Param("taskId") Integer taskId);
+
+    @Query("select t from TaskAssignment t where t.assignedBy.username = :username and  t.assignedTo.username = :username OR " +
+            "t.assignedTo.username = :username")
+    List<TaskAssignment> findAllAssignedTasksToUser(@Param("username") String username);
     List<TaskAssignment> findByAssignedToUsername(String assignedToUsername);
     List<TaskAssignment> findByAssignedByUsername(String assignedByUsername);
 }

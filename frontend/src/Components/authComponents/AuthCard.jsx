@@ -14,9 +14,7 @@ const AuthCard = ({ title, children,
             </div>
 
             <div className="auth-footer">
-                <span>{footerText} </span>
-                <a href={footerLinkHref} className="auth-link">{footerLinkText}</a>
-
+                <span>{footerText} <a href={footerLinkHref} className="auth-link">{footerLinkText}</a></span>
                 {forgotPasswordLink && (
                     <div className="forgot-password">
                         <a href="#forgot" className="forgot-link">Forgot Password?</a>

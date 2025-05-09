@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./TestPage.css"
 import { authFetch } from "../utils/AuthFetch";
 import TaskCard from "../Components/TaskCard";
+import TasksContainer from "../Components/TasksContainer";
 
 export default function TestPage() {
     const [data, setData] = useState(null);
@@ -26,9 +27,7 @@ export default function TestPage() {
 
     return (
         <div className="container">
-            <TaskCard status={"done"}/>
-            <TaskCard status={"active"}/>
-            <TaskCard status={"urgent"}/>
+            <TasksContainer/>
         </div>
     );
 }

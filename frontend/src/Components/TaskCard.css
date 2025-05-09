@@ -1,30 +1,32 @@
-
-
 .task-card {
-    width: 220px;
+    width: 100%;
+    max-width: 330px;
+    min-width: 330px;
     background-color: #1e1e1e;
-    min-height: 300px;
+    min-height: 520px;
+    height: 100%;
     border-radius: 15px;
-    padding: 10px;
+    padding: 10px 15px;
     color: white;
     display: flex;
     flex-direction: column;
     position: relative;
     transition: box-shadow 0.3s;
-
+    justify-content: space-between;
 }
 
 .glow-active {
-    box-shadow: inset 1px 2px 6.7px -2px #8b5cf6, 0 4px 12px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 2px 4px 12px -1px #8b5cf6, 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .glow-done {
-    box-shadow: inset 1px 2px 6.7px -2px #22c55e, 0 4px 12px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 2px 4px 12px -1px #22c55e, 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .glow-urgent {
-    box-shadow: inset 1px 2px 6.7px -2px #ef4444, 0 4px 12px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 2px 4px 12px -1px #ef4444, 0 4px 12px rgba(0, 0, 0, 0.5);
 }
+
 
 .task-card-header {
     margin-top: 5px;
@@ -34,13 +36,6 @@
     gap: 10px;
 }
 
-.assigned-badge {
-    font-size: 11px;
-    padding: 4px 8px;
-    border-radius: 8px;
-    font-weight: bold;
-    color: white;
-}
 
 .badge-done {
     background-color: #22c55e;
@@ -56,7 +51,7 @@
 
 .status-badge {
     position: relative;
-    font-size: 11px;
+    font-size: 20px;
     padding: 4px 8px;
     border-radius: 8px;
     font-weight: bold;
@@ -66,16 +61,15 @@
 .task-title {
     margin-top: 10px;
     font-family: Inter, sans-serif;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 50px;
+    font-weight: bolder;
     text-align: left;
-    min-height: 180px;
     overflow-wrap: break-word;
+    min-height: 250px;
 }
 
 .task-footer {
-    margin-top: 10px;
-    font-size: 12px;
+    font-size: 20px;
     color: #999;
     text-align: left;
     display: flex;
@@ -87,10 +81,10 @@
 
 .line-through {
     text-decoration: line-through;
-    text-decoration-thickness: 2px;
+    text-decoration-thickness: 1.5px;
+    text-decoration-style: revert;
     opacity: 0.7;
 }
 .left-align {
     text-align: left;
 }
-

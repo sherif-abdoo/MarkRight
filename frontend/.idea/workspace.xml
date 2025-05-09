@@ -5,11 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb77df0b-80ac-4133-9d2e-54b5d658261e" name="Changes" comment="task card done">
+      <change afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Dto/TaskAssignmentDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Mappers/TaskAssignmentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/TasksContainer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/TasksContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Controller/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Repository/TaskAssignmentRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Repository/TaskAssignmentRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Services/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Services/TaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/GlossyCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/TaskCard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/GlossyCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/TaskCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/TaskCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/TaskCard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/TaskCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/TaskCard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/authComponents/AuthCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/authComponents/AuthCard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/authComponents/AuthCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/authComponents/AuthCard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/TestPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/TestPage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/TestPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/TestPage.jsx" afterDir="false" />
     </list>
@@ -22,9 +32,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript JSX File" />
-        <option value="CSS File" />
         <option value="JavaScript File" />
         <option value="JSX File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -78,9 +88,9 @@
       <recent name="S:\Projects\MarkRight\frontend\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="S:\Projects\MarkRight\frontend\src\Components" />
       <recent name="S:\Projects\MarkRight\frontend\src\Pages\authPages" />
       <recent name="S:\Projects\MarkRight\frontend\src\Components\auth" />
-      <recent name="S:\Projects\MarkRight\frontend\src\Components" />
     </key>
   </component>
   <component name="RunManager">
@@ -114,7 +124,9 @@
       <workItem from="1746500403200" duration="178000" />
       <workItem from="1746530100078" duration="13547000" />
       <workItem from="1746585478627" duration="11547000" />
-      <workItem from="1746654708334" duration="7708000" />
+      <workItem from="1746654708334" duration="8672000" />
+      <workItem from="1746708780885" duration="16554000" />
+      <workItem from="1746822022528" duration="1794000" />
     </task>
     <task id="LOCAL-00001" summary="frontend foundation">
       <option name="closed" value="true" />
@@ -172,7 +184,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746661182032</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="task card done">
+      <option name="closed" value="true" />
+      <created>1746666655961</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1746666655961</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
