@@ -38,11 +38,14 @@
 }
 
 .tasks {
-    width: fit-content;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
     gap: 30px;
-    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    padding: 10px;
 }
+
 
 

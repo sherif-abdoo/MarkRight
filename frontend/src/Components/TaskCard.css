@@ -13,6 +13,7 @@
     position: relative;
     transition: box-shadow 0.3s;
     justify-content: space-between;
+    transition: box-shadow 0.3s ease, transform 0.2s ease, filter 0.3s ease;
 }
 
 .glow-active {
@@ -25,6 +26,10 @@
 
 .glow-urgent {
     box-shadow: inset 2px 4px 12px -1px #ef4444, 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.task-card:hover {
+    transform: translateY(-3px) scale(1.02);
 }
 
 
@@ -56,6 +61,7 @@
     border-radius: 8px;
     font-weight: bold;
     color: white;
+    cursor: pointer;
 }
 
 .task-title {

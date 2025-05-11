@@ -38,13 +38,10 @@ public class TaskService {
         return JSendResponse.success(response);
     }
 
-    public JSendResponse updateTask(Task task , boolean completed) {
+    public JSendResponse updateTask(int taskId) {
+        Task task = taskRepo.findById(taskId).get();
         Map<String, Object> response = new HashMap<>();
-        if(task.isCompleted() == completed) {
-            response.put("message", "Task has same status already");
-            return JSendResponse.success(response);
-        }
-        task.setCompleted(completed);
+        task.setCompleted(!task.isCompleted());
         taskRepo.save(task);
         response.put("message", "Task updated successfully");
         return JSendResponse.success(response);
@@ -63,9 +60,25 @@ public class TaskService {
         }
     }
 
-    public JSendResponse getAllTasksByUsername(String username) {
+    public JSendResponse getAllAcceptedTasksByUsername(String username) {
         Map<String, Object> response = new HashMap<>();
-        List<TaskAssignmentDto> tasks = taskAssignmentRepo.findAllAssignedTasksToUser(username)
+        List<TaskAssignmentDto> tasks = taskAssignmentRepo.findAllAcceptedAssignedTasksToUser(username)
+                .stream().map(TaskAssignmentMapper::toDto).collect(Collectors.toList());
+        response.put("tasks", tasks);
+        return JSendResponse.success(response);
+    }
+
+    public JSendResponse getAllPendingTasksByUsername(String username) {
+        Map<String, Object> response = new HashMap<>();
+        List<TaskAssignmentDto> tasks = taskAssignmentRepo.findAllPendingAssignedTasksToUser(username)
+                .stream().map(TaskAssignmentMapper::toDto).collect(Collectors.toList());
+        response.put("tasks", tasks);
+        return JSendResponse.success(response);
+    }
+
+    public JSendResponse getAllCreatedTasksByUsername(String username) {
+        Map<String, Object> response = new HashMap<>();
+        List<TaskAssignmentDto> tasks = taskAssignmentRepo.findAllCreatedAssignedTasksToUser(username)
                 .stream().map(TaskAssignmentMapper::toDto).collect(Collectors.toList());
         response.put("tasks", tasks);
         return JSendResponse.success(response);
@@ -74,7 +87,7 @@ public class TaskService {
 
     public JSendResponse getTasksByDate(int userId , LocalDate searchDate) {
         Map<String, Object> response = new HashMap<>();
-        List<Task> tasks = taskRepo.findTasksByDateAndUser(userId , searchDate);
+        List<Task> tasks = taskRepo.findTasksByDateAndUser(Integer.valueOf(userId), searchDate);
         response.put("tasks", tasks);
         return JSendResponse.success(response);
     }
@@ -84,7 +97,6 @@ public class TaskService {
         User assigner = task.getTaskCreator();
         Map<String, Object> response = new HashMap<>();
         TaskAssignment taskAssignment = new TaskAssignment();
-
         //if user assigning task to himself
         if(task.getTaskCreator().getUsername().equals(assigneeUsername)) {
             assineeUser.setId(assigner.getId());

@@ -5,23 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb77df0b-80ac-4133-9d2e-54b5d658261e" name="Changes" comment="task card done">
-      <change afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Dto/TaskAssignmentDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Mappers/TaskAssignmentMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/TasksContainer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/TasksContainer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Models/TaskStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Services/TaskAssignmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/MarkRight/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/MarkRight/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Controller/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Dto/TaskAssignmentDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Dto/TaskAssignmentDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Mappers/TaskAssignmentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Mappers/TaskAssignmentMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Repository/TaskAssignmentRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Repository/TaskAssignmentRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Services/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Services/TaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/TaskCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/TaskCard.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/TaskCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/TaskCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/authComponents/AuthCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/authComponents/AuthCard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/authComponents/AuthCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/authComponents/AuthCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/TestPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/TestPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/TestPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/TestPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/TasksContainer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/TasksContainer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/TasksContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/TasksContainer.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,24 +62,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Node.js.App.js.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;S:/Projects/MarkRight/frontend/public&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2024.3.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Node.js.App.js.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "/home/sherifabdo/IdeaProjects/MarkRight/frontend",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "/home/sherifabdo/.config/JetBrains/WebStorm2025.1/node/versions/22.15.0/bin/node",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "ts.external.directory.path": "/snap/webstorm/466/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="S:\Projects\MarkRight\frontend\public" />
@@ -108,7 +107,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-WS-243.26053.12" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-WS-251.25410.117" />
       </set>
     </attachedChunks>
   </component>
@@ -127,6 +126,11 @@
       <workItem from="1746654708334" duration="8672000" />
       <workItem from="1746708780885" duration="16554000" />
       <workItem from="1746822022528" duration="1794000" />
+      <workItem from="1746838796720" duration="1070000" />
+      <workItem from="1746876760562" duration="719000" />
+      <workItem from="1746879168555" duration="172000" />
+      <workItem from="1746882046684" duration="2751000" />
+      <workItem from="1746932613150" duration="5636000" />
     </task>
     <task id="LOCAL-00001" summary="frontend foundation">
       <option name="closed" value="true" />

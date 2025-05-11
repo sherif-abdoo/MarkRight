@@ -16,9 +16,27 @@ public interface TaskAssignmentRepo extends JpaRepository<TaskAssignment, Intege
     @Query("SELECT t.assignedTo FROM TaskAssignment t WHERE t.task.id = :taskId")
     Optional<User> findAssignedToByTaskId(@Param("taskId") Integer taskId);
 
-    @Query("select t from TaskAssignment t where t.assignedBy.username = :username and  t.assignedTo.username = :username OR " +
-            "t.assignedTo.username = :username")
-    List<TaskAssignment> findAllAssignedTasksToUser(@Param("username") String username);
+    @Query("""
+    SELECT t FROM TaskAssignment t
+    WHERE 
+        (t.assignedTo.username = :username AND t.status = com.MarkRight.Models.TaskAssignmentStatus.ACCEPTED)
+    """)
+    List<TaskAssignment> findAllAcceptedAssignedTasksToUser(@Param("username") String username);
+
+    @Query("""
+    SELECT t FROM TaskAssignment t
+    WHERE 
+       (t.assignedTo.username = :username AND t.status = com.MarkRight.Models.TaskAssignmentStatus.PENDING)
+    """)
+    List<TaskAssignment> findAllPendingAssignedTasksToUser(@Param("username") String username);
+
+    @Query("""
+    SELECT t FROM TaskAssignment t
+    WHERE 
+        (t.assignedBy.username = :username AND NOT t.assignedTo.username = :username )
+    """)
+    List<TaskAssignment> findAllCreatedAssignedTasksToUser(@Param("username") String username);
+
     List<TaskAssignment> findByAssignedToUsername(String assignedToUsername);
     List<TaskAssignment> findByAssignedByUsername(String assignedByUsername);
 }

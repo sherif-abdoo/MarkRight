@@ -1,18 +1,15 @@
 package com.MarkRight.Controller;
 
 import com.MarkRight.Dto.TaskDto;
+import com.MarkRight.Services.TaskAssignmentService;
 import com.MarkRight.Services.TaskService;
 import com.MarkRight.Services.UserService;
-import com.MarkRight.Utils.CookiesUtils;
 import com.MarkRight.Utils.JSendResponse;
 import com.MarkRight.Utils.JSendResponseBuilder;
-import com.MarkRight.Utils.JwtUtils;
-import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/tasks")
@@ -20,40 +17,55 @@ import java.util.Map;
 public class TaskController {
     private final TaskService taskService;
     private final UserService userService;
-    private final JwtUtils jwtUtils;
+    private final TaskAssignmentService taskAssignmentService;
     @PostMapping("/create")
     public ResponseEntity<JSendResponse> createTask(@RequestBody TaskDto taskDto,
-                                                    HttpServletRequest request){
+                                                    Authentication auth) {
+        String creatorUsername = auth.getName(); // auto-extracted from JWT by Spring Security
+        taskDto.setCreatorUsername(creatorUsername);
 
-        String accessToken = CookiesUtils.extractFromCookies(request, "access_token");
-        if (accessToken == null) {
-            return JSendResponseBuilder.build(JSendResponse.fail(Map.of("error", "Access token not found in cookies")));
-        }
-
-        try {
-            String creatorUsername = jwtUtils.getUsernameFromToken(accessToken);
-            taskDto.setCreatorUsername(creatorUsername);
-        } catch (Exception e) {
-            return JSendResponseBuilder.build(
-                    JSendResponse.fail(Map.of("error", e.getMessage()))
-            );
-        }
         JSendResponse response = taskService.createTask(taskDto);
         return JSendResponseBuilder.build(response);
     }
 
-    @GetMapping("/get_tasks")
-    public ResponseEntity<JSendResponse> getAllTasks(HttpServletRequest request){
-        String accessToken = CookiesUtils.extractFromCookies(request, "access_token");
-        if (accessToken == null) {
-            return JSendResponseBuilder.build(JSendResponse.fail(Map.of("error", "Access token not found in cookies")));
-        }
-        try {
-            String creatorUsername = jwtUtils.getUsernameFromToken(accessToken);
-            return JSendResponseBuilder.build(taskService.getAllTasksByUsername(creatorUsername));
-        } catch (Exception e) {
-            return JSendResponseBuilder.build(JSendResponse.fail(Map.of("error", e.getMessage())));
-        }
+    @PostMapping("accept/{taskId}")
+    public ResponseEntity<JSendResponse> acceptTask(Authentication auth, @PathVariable int taskId) {
+        String accepterUsername = auth.getName();
+        return JSendResponseBuilder.build(taskAssignmentService.acceptAssignment(taskId));
+    }
+    @PostMapping("reject/{taskId}")
+    public ResponseEntity<JSendResponse> rejectTask(Authentication auth, @PathVariable int taskId) {
+        String accepterUsername = auth.getName();
+        return JSendResponseBuilder.build(taskAssignmentService.rejectAssignment(taskId));
+    }
+
+    @PostMapping("done/{taskId}")
+    public ResponseEntity<JSendResponse> doneTask(Authentication auth, @PathVariable int taskId) {
+        return JSendResponseBuilder.build(taskService.updateTask(taskId));
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<JSendResponse> getAllTasks(Authentication auth) {
+        String creatorUsername = auth.getName(); // auto-extracted from JWT
+        return JSendResponseBuilder.build(taskService.getAllAcceptedTasksByUsername(creatorUsername));
+    }
+
+    @GetMapping("/accepted")
+    public ResponseEntity<JSendResponse> getAllAcceptedTasks(Authentication auth) {
+        String username = auth.getName(); // extracted from JWT
+        return ResponseEntity.ok(taskService.getAllAcceptedTasksByUsername(username));
+    }
+
+    @GetMapping("/pending")
+    public ResponseEntity<JSendResponse> getAllPendingTasks(Authentication auth) {
+        String username = auth.getName();
+        return ResponseEntity.ok(taskService.getAllPendingTasksByUsername(username));
+    }
+
+    @GetMapping("/created")
+    public ResponseEntity<JSendResponse> getAllCreatedTasks(Authentication auth) {
+        String username = auth.getName();
+        return ResponseEntity.ok(taskService.getAllCreatedTasksByUsername(username));
     }
 
 
