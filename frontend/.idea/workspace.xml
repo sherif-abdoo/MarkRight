@@ -4,21 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb77df0b-80ac-4133-9d2e-54b5d658261e" name="Changes" comment="task card done">
-      <change afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Models/TaskStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Services/TaskAssignmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/MarkRight/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/MarkRight/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Controller/TaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Dto/TaskAssignmentDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Dto/TaskAssignmentDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Mappers/TaskAssignmentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Mappers/TaskAssignmentMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Repository/TaskAssignmentRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Repository/TaskAssignmentRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Services/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Services/TaskService.java" afterDir="false" />
+    <list default="true" id="cb77df0b-80ac-4133-9d2e-54b5d658261e" name="Changes" comment="change state in frontend done">
+      <change afterPath="$PROJECT_DIR$/src/Components/CreateTask.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/CreateTask.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Models/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Models/Task.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/TaskCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/TaskCard.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/TaskCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/TaskCard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/TasksContainer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/TasksContainer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/TasksContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/TasksContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/AuthFetch.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/AuthFetch.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +44,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/sherif-abdoo/MarkRight.git&quot;,
-    &quot;accountId&quot;: &quot;05d129e7-a952-4634-b8b6-7bb354315077&quot;
+    &quot;accountId&quot;: &quot;77ff8ede-8cab-420a-87a1-a46658d817bb&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -62,31 +59,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Node.js.App.js.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "/home/sherifabdo/IdeaProjects/MarkRight/frontend",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "/home/sherifabdo/.config/JetBrains/WebStorm2025.1/node/versions/22.15.0/bin/node",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "ts.external.directory.path": "/snap/webstorm/466/plugins/javascript-plugin/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Node.js.App.js.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/sherifabdo/IdeaProjects/MarkRight/frontend&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;/home/sherifabdo/.config/JetBrains/WebStorm2025.1/node/versions/22.15.0/bin/node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/snap/webstorm/466/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="S:\Projects\MarkRight\frontend\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Components" />
       <recent name="S:\Projects\MarkRight\frontend\src\Components" />
       <recent name="S:\Projects\MarkRight\frontend\src\Pages\authPages" />
       <recent name="S:\Projects\MarkRight\frontend\src\Components\auth" />
@@ -130,7 +128,9 @@
       <workItem from="1746876760562" duration="719000" />
       <workItem from="1746879168555" duration="172000" />
       <workItem from="1746882046684" duration="2751000" />
-      <workItem from="1746932613150" duration="5636000" />
+      <workItem from="1746932613150" duration="9858000" />
+      <workItem from="1746955840204" duration="1543000" />
+      <workItem from="1746959137694" duration="2506000" />
     </task>
     <task id="LOCAL-00001" summary="frontend foundation">
       <option name="closed" value="true" />
@@ -196,7 +196,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746666655961</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="change state in frontend done">
+      <option name="closed" value="true" />
+      <created>1746942851591</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1746942851591</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,6 +217,7 @@
     <MESSAGE value="Auth card + sign page + login page" />
     <MESSAGE value="auth wierd with backend and sanitization" />
     <MESSAGE value="task card done" />
-    <option name="LAST_COMMIT_MESSAGE" value="task card done" />
+    <MESSAGE value="change state in frontend done" />
+    <option name="LAST_COMMIT_MESSAGE" value="change state in frontend done" />
   </component>
 </project>

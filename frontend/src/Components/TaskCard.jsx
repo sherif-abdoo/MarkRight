@@ -36,11 +36,11 @@ const TaskCard = ({
                   Assigned by {assignedBy}
                 </span>
                     <div className={`status-badge badge-${done ? "done" : status}`} onClick={doneTask}>
-                        {done ? "DONE" : status.toUpperCase()}
+                        {done ? "DONE!" : status.toUpperCase()}
                     </div>
                 </div>
                 <h2
-                    className={`task-title left-align ${done ? "line-through text-green" : "text-" + status}`}
+                    className={`task-title left-align ${done ? "line-through" : "text-" + status}`}
                     onClick={() => {
                         if (description.length > MAX_LENGTH) {
                             setExpanded(prev => !prev);
