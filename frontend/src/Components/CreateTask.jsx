@@ -1,7 +1,7 @@
-// CreateTask.jsx
+// Updated CreateTask.jsx with renamed classNames to avoid conflict
 import React, { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { authFetch } from "../utils/AuthFetch";
 import "./CreateTask.css";
 
@@ -17,14 +17,15 @@ const CreateTask = ({ onTaskCreated }) => {
     const cardRef = useRef(null);
     const buttonRef = useRef(null);
 
-    // Handle click outside to close
     useEffect(() => {
         if (!isExpanded) return;
 
         const handleClickOutside = (e) => {
-            if (cardRef.current &&
+            if (
+                cardRef.current &&
                 !cardRef.current.contains(e.target) &&
-                !buttonRef.current.contains(e.target)) {
+                !buttonRef.current.contains(e.target)
+            ) {
                 handleClose();
             }
         };
@@ -43,7 +44,7 @@ const CreateTask = ({ onTaskCreated }) => {
         setTimeout(() => {
             setIsExpanded(false);
             setIsClosing(false);
-        }, 300); // Match this with CSS transition duration
+        }, 300);
     };
 
     const handleSubmit = async () => {
@@ -85,97 +86,94 @@ const CreateTask = ({ onTaskCreated }) => {
     };
 
     return (
-        <div className="create-task-container">
-            {/* Plus Button */}
+        <div className="popup-task-container">
             <button
                 ref={buttonRef}
-                className={`add-task-button glow-${status} ${isExpanded ? 'hidden-button' : ''}`}
+                className={`popup-add-button glow-${status} ${isExpanded ? 'popup-hidden-button' : ''}`}
                 onClick={handleOpen}
             >
                 <FontAwesomeIcon icon={faPlus} />
             </button>
 
-            {/* Expanded Card */}
             {(isExpanded || isClosing) && (
-                <div
-                    ref={cardRef}
-                    className={`task-card glow-${status} ${isClosing ? 'card-closing' : 'card-opening'}`}
-                >
-                    <div className="task-card-header">
-                        <h3 className="task-card-title">Create New Task</h3>
+                <>
+                    <div className="popup-overlay" onClick={handleClose}></div>
 
+                    <div
+                        ref={cardRef}
+                        className={`popup-task-card glow-normal ${isClosing ? 'popup-card-closing' : 'popup-card-opening'}`}
+                    >
+                        <div className="popup-task-card-header">
+                            <h3 className="popup-task-card-title">Create New Task</h3>
+                        </div>
+
+                        <div className="popup-task-form">
+                            <div className="popup-form-row">
+                                <div className="popup-form-group">
+                                    <label className="popup-form-label">Assigned To</label>
+                                    <input
+                                        className="popup-task-input"
+                                        value={assignee}
+                                        onChange={(e) => setAssignee(e.target.value)}
+                                        placeholder="Username"
+                                    />
+                                </div>
+
+                                <div className="popup-form-group">
+                                    <label className="popup-form-label">Status</label>
+                                    <select
+                                        className={`popup-status-select badge-${status}`}
+                                        value={status}
+                                        onChange={(e) => setStatus(e.target.value)}
+                                    >
+                                        <option value="active">Active</option>
+                                        <option value="urgent">Urgent</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div className="popup-form-group">
+                                <label className="popup-form-label">Description</label>
+                                <textarea
+                                    className="popup-task-title-input"
+                                    value={description}
+                                    onChange={(e) => setDescription(e.target.value)}
+                                    placeholder="What needs to be done?"
+                                    rows={4}
+                                />
+                            </div>
+
+                            <div className="popup-form-row">
+                                <div className="popup-form-group">
+                                    <label className="popup-form-label">Start Date</label>
+                                    <input
+                                        type="date"
+                                        className="popup-task-date"
+                                        value={startDate}
+                                        onChange={(e) => setStartDate(e.target.value)}
+                                    />
+                                </div>
+
+                                <div className="popup-form-group">
+                                    <label className="popup-form-label">Deadline</label>
+                                    <input
+                                        type="date"
+                                        className="popup-task-date"
+                                        value={deadline}
+                                        onChange={(e) => setDeadline(e.target.value)}
+                                    />
+                                </div>
+                            </div>
+
+                            <button
+                                className="popup-create-button"
+                                onClick={handleSubmit}
+                            >
+                                Create Task
+                            </button>
+                        </div>
                     </div>
-
-                    <div className="task-form">
-                        {/* Assignee & Status */}
-                        <div className="form-row">
-                            <div className="form-group">
-                                <label className="form-label">Assigned To</label>
-                                <input
-                                    className="task-input"
-                                    value={assignee}
-                                    onChange={(e) => setAssignee(e.target.value)}
-                                    placeholder="Username"
-                                />
-                            </div>
-
-                            <div className="form-group">
-                                <label className="form-label">Status</label>
-                                <select
-                                    className={`status-select badge-${status}`}
-                                    value={status}
-                                    onChange={(e) => setStatus(e.target.value)}
-                                >
-                                    <option value="active">Active</option>
-                                    <option value="urgent">Urgent</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        {/* Description */}
-                        <div className="form-group">
-                            <label className="form-label">Description</label>
-                            <textarea
-                                className="task-title-input"
-                                value={description}
-                                onChange={(e) => setDescription(e.target.value)}
-                                placeholder="What needs to be done?"
-                                rows={4}
-                            />
-                        </div>
-
-                        {/* Dates */}
-                        <div className="form-row">
-                            <div className="form-group">
-                                <label className="form-label">Start Date</label>
-                                <input
-                                    type="date"
-                                    className="task-date"
-                                    value={startDate}
-                                    onChange={(e) => setStartDate(e.target.value)}
-                                />
-                            </div>
-
-                            <div className="form-group">
-                                <label className="form-label">Deadline</label>
-                                <input
-                                    type="date"
-                                    className="task-date"
-                                    value={deadline}
-                                    onChange={(e) => setDeadline(e.target.value)}
-                                />
-                            </div>
-                        </div>
-
-                        {/* Submit Button */}
-                        <button
-                            className={`create-button `}
-                            onClick={handleSubmit}
-                        >
-                            Create Task
-                        </button>
-                    </div>
-                </div>
+                </>
             )}
         </div>
     );

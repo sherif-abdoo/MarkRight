@@ -24,6 +24,7 @@ public class TaskMapper {
         task.setStartsAt(dto.getStartDate());
         task.setEndsAt(dto.getEndDate());
         task.setCompleted(dto.isCompleted());
+        task.setStatus(dto.getStatus());
         return task;
     }
     public TaskDto toDto(Task task) {
@@ -36,6 +37,7 @@ public class TaskMapper {
         dto.setStartDate(task.getStartsAt());
         dto.setEndDate(task.getEndsAt());
         dto.setCompleted(task.isCompleted());
+        dto.setStatus(task.getStatus());
         return dto;
     }
 }

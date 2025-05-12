@@ -1,5 +1,6 @@
 package com.MarkRight.Dto;
 
+import com.MarkRight.Models.TaskStatus;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -11,5 +12,6 @@ public class TaskDto {
     private String description;
     private LocalDate startDate;
     private LocalDate endDate;
+    private TaskStatus status;
     private boolean completed = false;
 }

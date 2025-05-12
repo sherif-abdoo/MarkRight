@@ -5,17 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb77df0b-80ac-4133-9d2e-54b5d658261e" name="Changes" comment="change state in frontend done">
-      <change afterPath="$PROJECT_DIR$/src/Components/CreateTask.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/CreateTask.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Models/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Models/Task.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pages/TasksPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Dto/TaskDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Dto/TaskDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Mappers/TaskMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Mappers/TaskMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/TaskCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/TaskCard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/TaskCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/TaskCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/TasksContainer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/TasksContainer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/AuthFetch.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/AuthFetch.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/CreateTask.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/CreateTask.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/CreateTask.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/CreateTask.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/TestPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/TestPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +24,8 @@
       <list>
         <option value="TypeScript JSX File" />
         <option value="JavaScript File" />
-        <option value="JSX File" />
         <option value="CSS File" />
+        <option value="JSX File" />
       </list>
     </option>
   </component>
@@ -130,7 +127,9 @@
       <workItem from="1746882046684" duration="2751000" />
       <workItem from="1746932613150" duration="9858000" />
       <workItem from="1746955840204" duration="1543000" />
-      <workItem from="1746959137694" duration="2506000" />
+      <workItem from="1746959137694" duration="2764000" />
+      <workItem from="1746996890266" duration="2573000" />
+      <workItem from="1747039190547" duration="302000" />
     </task>
     <task id="LOCAL-00001" summary="frontend foundation">
       <option name="closed" value="true" />
@@ -204,7 +203,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746942851591</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="change state in frontend done">
+      <option name="closed" value="true" />
+      <created>1746961805338</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1746961805338</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
