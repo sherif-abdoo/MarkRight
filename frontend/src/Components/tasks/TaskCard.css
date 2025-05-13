@@ -1,0 +1,164 @@
+.task-card {
+    width: 100%;
+    max-width: 330px;
+    min-width: 330px;
+    background-color: #1e1e1e;
+    min-height: 520px;
+    height: 100%;
+    border-radius: 15px;
+    padding: 10px 15px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: box-shadow 0.3s;
+    justify-content: space-between;
+    transition: box-shadow 0.3s ease, transform 0.2s ease, filter 0.3s ease;
+}
+
+.task-card-header-top{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-card-circles{
+    display: flex;
+    flex-direction: row;
+    gap : 5px;
+}
+
+.circle {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    border : none;
+}
+
+.circle.red {
+    background-color: #e74c3c;
+}
+
+.circle.yellow {
+    background-color: #f1c40f;
+}
+
+.circle.green {
+    background-color: #2ecc71;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: max-content;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 4px 8px;
+    position: absolute;
+    top: -10px;
+    white-space: nowrap;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.glow-active {
+    box-shadow: inset 2px 4px 12px -1px #8b5cf6, 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.glow-done {
+    box-shadow: inset 2px 4px 12px -1px #22c55e, 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.glow-urgent {
+    box-shadow: inset 2px 4px 12px -1px #ef4444, 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.glow-normal {
+    box-shadow: inset 2px 4px 12px -1px #ababab, 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.task-card:hover {
+    transform: translateY(-3px) scale(1.02);
+}
+
+
+.task-card-header {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+
+.badge-done {
+    background-color: #22c55e;
+}
+
+.badge-active {
+    background-color: #8b5cf6;
+}
+
+.badge-urgent {
+    background-color: #ef4444;
+}
+
+.badge-normal {
+    background-color: #acacac;
+    color: #1E1E1E;
+}
+
+.status-badge {
+    position: relative;
+    font-size: 20px;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    border:none;
+}
+
+.task-title {
+    margin-top: 10px;
+    font-family: Inter, sans-serif;
+    font-size: 50px;
+    font-weight: bolder;
+    text-align: left;
+    overflow-wrap: break-word;
+    min-height: 250px;
+}
+
+.task-footer {
+    font-size: 20px;
+    color: #999;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+
+.line-through {
+    text-decoration: line-through !important;
+    text-decoration-thickness: 1.5px !important;
+    text-decoration-style: revert;
+    opacity: 0.7 !important;
+}
+
+.left-align {
+    text-align: left;
+}
+
