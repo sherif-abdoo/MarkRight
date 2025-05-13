@@ -1,6 +1,5 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBell} from "@fortawesome/free-solid-svg-icons";
-import "./NotificationIcon.css"
 import {useNavigate} from "react-router-dom";
 
 export default function NotificationsIcon() {

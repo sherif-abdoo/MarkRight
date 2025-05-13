@@ -47,5 +47,15 @@
     padding: 10px;
 }
 
+.tasks-empty-text{
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 5rem;
+}
+
 
 

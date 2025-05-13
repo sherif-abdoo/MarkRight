@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static com.MarkRight.Models.TaskAssignmentStatus.*;
@@ -36,4 +37,21 @@ public class TaskAssignmentService {
         response.put("message", "Task Assignment Rejected Successfully");
         return JSendResponse.success(response);
     }
+    public Map<String, Integer> getAssignerTaskCounts(String username) {
+        List<Object[]> results = taskAssignmentRepo.
+                countAcceptedTasksAssignedToUserGroupedByAssigner(username);
+        Map<String, Integer> assignerMap = new HashMap<>();
+
+        for (Object[] row : results) {
+            String assignerUsername = (String) row[0];
+            if(assignerUsername.equals(username)){
+                assignerUsername = "ME";
+            }
+            Long count = (Long) row[1];
+            assignerMap.put(assignerUsername, count.intValue());
+        }
+
+        return assignerMap;
+    }
+
 }

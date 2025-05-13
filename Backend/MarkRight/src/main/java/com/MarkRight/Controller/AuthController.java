@@ -50,4 +50,10 @@ public class AuthController {
 
         return JSendResponseBuilder.build(result);
     }
+    @GetMapping("/check")
+    public ResponseEntity<?> checkAuth(HttpServletRequest request) {
+        System.out.println("lol");
+        return ResponseEntity.ok("Authenticated");
+    }
+
 }

@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import AuthCard from "./AuthCard";
 import sanitize from "../../utils/Sanitize";
+import {useNavigate} from "react-router-dom";
 
 
 function AuthPage() {
@@ -9,6 +10,7 @@ function AuthPage() {
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
     const [response, setResponse] = useState("");
+    const navigate = useNavigate();
     const handleSignUp = async (e) =>{
         e.preventDefault();
         setResponse("");
@@ -28,10 +30,9 @@ function AuthPage() {
             const json = await res.json();
             if(!res.ok){
                 setResponse(json.data.error);
-                console.log(response);
             }else{
                 setResponse(json.data.message);
-                console.log(response);
+                navigate("/login");
             }
         }
         catch(err){

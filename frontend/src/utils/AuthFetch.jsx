@@ -28,9 +28,11 @@ export const authFetch = async (url, options = {}, retry = true) => {
                 console.error(`[authFetch] ❌ Refresh error`, refreshErr);
             }
 
-            throw new Error("Session expired. Please log in again.");
+            window.location.href = "/login";
+            return;
         }
 
+        window.location.href = "/login";
         throw err;
     }
 };

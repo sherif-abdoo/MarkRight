@@ -49,25 +49,30 @@ const TasksContainer = ({all}) => {
             {loading && <p className="loading-text">Loading tasks...</p>}
             {error && <p className="error-text">{error}</p>}
 
-            <div className="tasks-container">
-                <div className="tasks">
-                    {tasks.map((task, idx) => {
-                        return (
-                            <TaskCard
-                                key={idx}
-                                taskId={task.taskId}
-                                assignedBy={task.creatorUsername}
-                                description={task.description}
-                                startDate={task.startDate}
-                                deadline={task.endDate}
-                                status={task.status.toLowerCase()}
-                                completed={task.completed}
-                                request ={!all}
-                            />
-                        );
-                    })}
+            {tasks.length > 0 ?
+                <div className="tasks-container">
+                    <div className="tasks">
+                        {tasks.map((task, idx) => {
+                            return (
+                                <TaskCard
+                                    key={idx}
+                                    taskId={task.taskId}
+                                    assignedBy={task.creatorUsername}
+                                    description={task.description}
+                                    startDate={task.startDate}
+                                    deadline={task.endDate}
+                                    status={task.status.toLowerCase()}
+                                    completed={task.completed}
+                                    request ={!all}
+                                />
+                            );
+                        })}
+                    </div>
+                </div> :
+                <div className="tasks-empty-text">
+                    <h1>No Tasks Yet</h1>
                 </div>
-            </div>
+            }
         </div>
     );
 };
