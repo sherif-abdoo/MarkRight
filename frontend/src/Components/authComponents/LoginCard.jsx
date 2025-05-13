@@ -29,7 +29,10 @@ function AuthPage() {
                 setError(message.data.error);
                 console.log(error);
             }
-            else navigate("/");
+            else {
+                localStorage.setItem("username", username);
+                navigate("/");
+            }
         }catch(err){
             console.log(err);
         }

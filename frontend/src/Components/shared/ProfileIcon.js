@@ -6,7 +6,8 @@ export default function ProfileIcon() {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate("/profile")
+        const username = localStorage.getItem("username");
+        navigate("/profile/" + username);
     }
     return (
         <div className="popup-add-button" onClick={handleClick} >

@@ -4,39 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb77df0b-80ac-4133-9d2e-54b5d658261e" name="Changes" comment="tasks requests">
-      <change afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Controller/ProfileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Services/ProfileService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Profile/Stats.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/shared/TasksIcon.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/profile.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/layouts/MainLayout.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Dto/ProfileDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Dto/ProfileDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Mappers/ProfileMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Mappers/ProfileMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Repository/TaskAssignmentRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Repository/TaskAssignmentRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Services/TaskAssignmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/MarkRight/src/main/java/com/MarkRight/Services/TaskAssignmentService.java" afterDir="false" />
+    <list default="true" id="cb77df0b-80ac-4133-9d2e-54b5d658261e" name="Changes" comment="Done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Profile/ProfileHeader.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/ProfileHeader.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Profile/ProfileHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/ProfileHeader.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/authComponents/SignUpCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/authComponents/SignUpCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/NotificationIcon.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/Stats.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/NotificationsIcon.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/NotificationsIcon.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/VerticalNavbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/VerticalNavbar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/shared/VerticalNavbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/VerticalNavbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/tasks/TasksContainer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/tasks/TasksContainer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/tasks/TasksContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/tasks/TasksContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/authComponents/LoginCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/authComponents/LoginCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/shared/ProfileIcon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/shared/ProfileIcon.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/ProfilePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ProfilePage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/TasksPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Task Pages/TasksPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/TasksRequestsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Task Pages/TasksRequestsPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/TestPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Task Pages/TestPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/TestPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Task Pages/TestPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/profile.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/AuthFetch.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/AuthFetch.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +130,7 @@
       <workItem from="1746996890266" duration="2573000" />
       <workItem from="1747039190547" duration="9447000" />
       <workItem from="1747081222447" duration="4692000" />
-      <workItem from="1747110789882" duration="12786000" />
+      <workItem from="1747110789882" duration="13672000" />
     </task>
     <task id="LOCAL-00001" summary="frontend foundation">
       <option name="closed" value="true" />
@@ -247,7 +220,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747111121388</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Done">
+      <option name="closed" value="true" />
+      <created>1747135698207</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1747135698207</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,6 +243,7 @@
     <MESSAGE value="task card done" />
     <MESSAGE value="change state in frontend done" />
     <MESSAGE value="tasks requests" />
-    <option name="LAST_COMMIT_MESSAGE" value="tasks requests" />
+    <MESSAGE value="Done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Done" />
   </component>
 </project>

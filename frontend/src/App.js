@@ -19,7 +19,7 @@ function App() {
                 <Route path="/signup" element={<SignUpPage />} />
                 <Route path="/" element={<MainLayout><TasksPage /></MainLayout>} />
                 <Route path="/requests" element={<MainLayout><TasksRequestsPage /></MainLayout>} />
-                <Route path="/profile" element={<MainLayout><ProfilePage /></MainLayout>} />
+                <Route path="/profile/:username" element={<MainLayout><ProfilePage /></MainLayout>} />
             </Routes>
         </Router>
     );
