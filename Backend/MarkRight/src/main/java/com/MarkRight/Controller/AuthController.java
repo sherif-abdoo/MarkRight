@@ -52,7 +52,6 @@ public class AuthController {
     }
     @GetMapping("/check")
     public ResponseEntity<?> checkAuth(HttpServletRequest request) {
-        System.out.println("lol");
         return ResponseEntity.ok("Authenticated");
     }
 

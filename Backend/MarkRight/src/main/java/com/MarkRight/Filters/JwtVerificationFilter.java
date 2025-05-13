@@ -37,7 +37,6 @@ public class JwtVerificationFilter extends OncePerRequestFilter {
 
         String uri = request.getRequestURI();
         if (uri.contains("/sign_up") || uri.contains("/refresh-token")) {
-            System.out.println("refresh token");
             filterChain.doFilter(request, response);
             return;
         }
